@@ -7,10 +7,10 @@
       %h2= @post.title
       %p.muted
         %i.fa.fa-calendar
-        = @post.start_time.strftime("%b %d, %Y")
+        = l(@post.start_time, format: :long)
       %p.muted
         %i.fa.fa-calendar
-        = @post.end_time.strftime("%b %d, %Y")
+        = l(@post.end_time, format: :long)
       %p.lead
         = @post.excerpt
       = @post.content.html_safe
