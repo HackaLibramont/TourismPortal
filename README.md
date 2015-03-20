@@ -44,17 +44,17 @@ Contributing
 API
 -------
 
-= endpoint:
+### endpoint:
 http://tourism-portal.com/api/
 
-= pages
-GET pages.json : a list of pages
+### pages
+*GET pages.json* : a list of pages
 
-= posts
-GET posts.json : a list of posts
+### posts
+*GET posts.json* : a list of posts
 
-= events
-GET events.json : a list of events
+### events
+*GET events.json* : a list of events
 
 
 Credits
