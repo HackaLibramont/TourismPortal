@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :events, only: :index
     resources :posts, only: :index
+    resources :pages, only: :index
   end
   mount Storytime::Engine => "/"
 end
