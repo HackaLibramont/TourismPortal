@@ -1,2 +1,2 @@
-collection @events => :events
+collection @events => nil
 extends "api/events/show"

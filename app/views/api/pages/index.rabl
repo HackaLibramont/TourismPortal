@@ -1,2 +1,2 @@
-collection @pages => :pages
+collection @pages => nil
 extends "api/pages/show"
