@@ -1,11 +1,11 @@
-fr:
+﻿fr:
   common:
-    are_you_sure_you_want_to_delete: "Are you sure you want to delete this %{resource_name}?"
+    are_you_sure_you_want_to_delete: "Etes-vous sûr de vouloir supprimer ceci: %{resource_name}?"
 
   flash:
     comments:
       create:
-        success: "Comment successfully created."
+        success: "Commentaire créé avec succès."
       update:
         success: "Comment successfully updated."
     posts:
