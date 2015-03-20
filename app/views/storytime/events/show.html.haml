@@ -1,0 +1,18 @@
+.container
+  - if params[:preview]
+    .alert.alert-info{:role => "alert"}
+      Currently viewing a preview of "#{@post.title}".
+  .row
+    .col-md-12
+      %h2= @post.title
+      %p.muted
+        %i.fa.fa-calendar
+        = @post.start_time.strftime("%b %d, %Y")
+      %p.muted
+        %i.fa.fa-calendar
+        = @post.end_time.strftime("%b %d, %Y")
+  .row
+    .col-md-12
+      = @post.content.html_safe
+      %p= render 'tags', post: @post
+  = render_comments if @post.show_comments? && !@post.preview

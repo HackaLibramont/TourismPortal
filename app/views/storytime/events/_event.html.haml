@@ -1,0 +1,12 @@
+.event{:id => "event_#{event.id}"}
+  %h2= link_to event.title, event
+  %p.muted
+    %i.fa.fa-calendar
+    = l(event.start_time, format: :long)
+  %p.muted
+    %i.fa.fa-calendar
+    = l(event.end_time, format: :long)
+  %p= event.excerpt
+  %p= link_to "Continue reading →", event
+  %p= render 'tags', post: event
+  %hr/

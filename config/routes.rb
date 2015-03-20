@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  mount Storytime::Engine => "/"
-  root to: 'visitors#index'
+
   devise_for :users
   resources :users
+  namespace :api do
+    resources :events, only: :index
+  end
+  mount Storytime::Engine => "/"
 end

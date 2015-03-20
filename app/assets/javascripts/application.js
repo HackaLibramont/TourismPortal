@@ -10,8 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
-//= require_tree .
+//= require moment
+//= require moment/fr.js
+//= require bootstrap-datetimepicker
+//= require locales/bootstrap-datetimepicker.fr

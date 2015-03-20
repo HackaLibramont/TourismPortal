@@ -1,0 +1,17 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Storytime
+    = stylesheet_link_tag    "storytime/application", media: "all"
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "storytime/application"
+    = javascript_include_tag "application"
+    = javascript_include_tag "admin"
+    = csrf_meta_tags
+  %body{:class => "#{params[:controller].parameterize}-controller #{params[:action]}-action", "data-action" => params[:action].camelize, "data-controller" => params[:controller].camelize}
+    = render "storytime/application/storytime/navigation"
+    = render "storytime/application/storytime/flash"
+    = yield

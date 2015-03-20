@@ -13,6 +13,7 @@
           %ul.nav.navbar-nav
             - Storytime::Page.published.each do |page|
               %li= link_to page.title, storytime.url_for(controller: "pages", action: "show", id: page.slug)
+            %li= link_to "Agenda", storytime.url_for(Event.type_name.pluralize)
             %li= link_to "Blog", storytime.url_for(Storytime::BlogPost.type_name.pluralize)
           %ul.nav.navbar-nav.navbar-right
             %li

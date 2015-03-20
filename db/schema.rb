@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320141638) do
+ActiveRecord::Schema.define(version: 20150320153343) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -88,6 +97,8 @@ ActiveRecord::Schema.define(version: 20150320141638) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "secondary_media_id", limit: 4
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   add_index "storytime_posts", ["slug"], name: "index_storytime_posts_on_slug", using: :btree

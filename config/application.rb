@@ -24,3 +24,5 @@ module TourismPortal
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+Dir["app/inputs/*_input.rb"].each { |f| require "#{Rails.root}/#{f}" }

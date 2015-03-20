@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem "storytime"
+gem 'bootstrap-datetimepicker-rails', '~> 0.0.11'
+gem 'momentjs-rails', '~> 2.9.0'
 
 group :development, :test do
   gem 'byebug'
