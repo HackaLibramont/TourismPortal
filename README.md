@@ -56,6 +56,32 @@ http://tourism-portal.be/api/
 ### events
 *GET events.json* : a list of events
 
+```json
+{
+  events: [
+    {
+      event: {
+      id: 4,
+      title: "Titre de l'événement",
+      excerpt: "Résumé de l'événement",
+      content: "Description étendue de l'événement",
+      published_at: "2015-03-20 15:59:00 UTC",
+      start_time: "2015-03-20 16:05:00 UTC",
+      end_time: "2015-03-20 16:05:00 UTC",
+      street: "Rue du musée 11",
+      zipcode: 6630,
+      city: "Martelange",
+      coordinates: [
+        49.8309,
+        5.73766
+      ]
+      }
+    },
+    {}
+  ]
+}
+```
+
 
 Credits
 -------

@@ -193,6 +193,7 @@ GEM
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    geocoder (1.2.7)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -386,6 +387,7 @@ DEPENDENCIES
   devise-i18n
   erb2haml
   figaro (>= 1.0.0.rc1)
+  geocoder (~> 1.2.7)
   haml-rails
   high_voltage
   html2haml

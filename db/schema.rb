@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320153343) do
+ActiveRecord::Schema.define(version: 20150320201036) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -99,6 +99,11 @@ ActiveRecord::Schema.define(version: 20150320153343) do
     t.integer  "secondary_media_id", limit: 4
     t.datetime "start_time"
     t.datetime "end_time"
+    t.string   "street",             limit: 255
+    t.integer  "zipcode",            limit: 4
+    t.string   "city",               limit: 255
+    t.float    "longitude",          limit: 24
+    t.float    "latitude",           limit: 24
   end
 
   add_index "storytime_posts", ["slug"], name: "index_storytime_posts_on_slug", using: :btree

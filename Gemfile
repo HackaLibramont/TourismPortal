@@ -11,6 +11,7 @@ gem "storytime"
 gem 'bootstrap-datetimepicker-rails', '~> 0.0.11'
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'rabl'
+gem 'geocoder', '~> 1.2.7'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

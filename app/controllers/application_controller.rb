@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def storytime_post_param_additions
-    attrs = [:start_time, :end_time]
+    attrs = [:start_time, :end_time, :city, :zipcode, :street]
     attrs
   end
 end
