@@ -12,6 +12,9 @@ gem 'bootstrap-datetimepicker-rails', '~> 0.0.11'
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'rabl'
 gem 'geocoder', '~> 1.2.7'
+gem 'draper', '~> 1.3'
+gem 'leaflet-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

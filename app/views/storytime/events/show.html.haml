@@ -1,9 +1,9 @@
-.container
+.container.show-events
   - if params[:preview]
     .alert.alert-info{:role => "alert"}
       Currently viewing a preview of "#{@post.title}".
   .row
-    .col-md-12
+    %div{class: @post.coordinates.any? ? 'col-md-6' : 'col-md-12'}
       %h2= @post.title
       %p.muted
         %i.fa.fa-calendar
@@ -11,8 +11,10 @@
       %p.muted
         %i.fa.fa-calendar
         = @post.end_time.strftime("%b %d, %Y")
-  .row
-    .col-md-12
+      %p.lead
+        = @post.excerpt
       = @post.content.html_safe
       %p= render 'tags', post: @post
-  = render_comments if @post.show_comments? && !@post.preview
+    - if @post.coordinates.any?
+      .col-md-6
+        = map(:center => { :latlng => @post.coordinates, :zoom => 12 }, :markers => [{ :latlng => @post.coordinates, :popup => "#{@post.title} - #{@post.excerpt}" }])

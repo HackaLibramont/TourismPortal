@@ -14,3 +14,5 @@
 //= require moment/fr.js
 //= require bootstrap-datetimepicker
 //= require locales/bootstrap-datetimepicker.fr
+//= require leaflet
+
