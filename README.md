@@ -45,7 +45,7 @@ API
 -------
 
 ### endpoint:
-http://tourism-portal.com/api/
+http://tourism-portal.be/api/
 
 ### pages
 *GET pages.json* : a list of pages
