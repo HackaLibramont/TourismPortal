@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320201036) do
+ActiveRecord::Schema.define(version: 20150320212416) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "label",       limit: 255
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.integer  "zip",        limit: 4
+    t.string   "city",       limit: 255
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "criteria", force: :cascade do |t|
+    t.string   "type_of",     limit: 255
+    t.string   "label",       limit: 255
+    t.integer  "interest_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -34,6 +58,32 @@ ActiveRecord::Schema.define(version: 20150320201036) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "interests", force: :cascade do |t|
+    t.string   "cgt_code",    limit: 255
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "address",     limit: 255
+    t.integer  "zip",         limit: 4
+    t.string   "mobile",      limit: 255
+    t.string   "phone",       limit: 255
+    t.string   "email",       limit: 255
+    t.string   "website",     limit: 255
+    t.float    "latitude",    limit: 24
+    t.float    "longitude",   limit: 24
+    t.string   "source",      limit: 255
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.integer  "interest_id", limit: 4
+    t.string   "type",        limit: 255
+    t.string   "url",         limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "storytime_actions", force: :cascade do |t|
     t.string   "name",       limit: 255
