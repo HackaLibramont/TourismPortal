@@ -1,0 +1,11 @@
+- content_for :head, auto_discovery_link_tag(:atom, Storytime::BlogPost, format: "atom")
+.container
+  .row
+    .col-md-9
+      .post-list
+        = render @posts
+        = paginate @posts, param_name: "page_number"
+    .col-md-3
+      %h5 Tags
+      - tag_cloud Storytime::Post.tag_counts, %w[s m l] do |tag, css_class|
+        %div= link_to tag.name, tag_path(tag.name), class: css_class

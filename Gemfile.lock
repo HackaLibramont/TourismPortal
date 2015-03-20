@@ -93,6 +93,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-i18n (0.11.4)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     excon (0.44.4)
     execjs (2.4.0)
@@ -364,6 +366,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
+  erb2haml
   figaro (>= 1.0.0.rc1)
   haml-rails
   high_voltage

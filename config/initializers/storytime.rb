@@ -9,16 +9,16 @@ Storytime.configure do |config|
 
   # Path of Storytime's dashboard, relative to
   # Storytime's mount point within the host app.
-  # config.dashboard_namespace_path = "/storytime"
+  config.dashboard_namespace_path = "/admin"
 
   # Path of Storytime's home page, relative to
   # Storytime's mount point within the host app.
   # config.home_page_path = "/"
 
-  # Path used to sign users in. 
+  # Path used to sign users in.
   # config.login_path = '/users/sign_in'
 
-  # Path used to log users out. 
+  # Path used to log users out.
   # config.logout_path = '/users/sign_out'
 
   # Method used for Storytime user logout path.
