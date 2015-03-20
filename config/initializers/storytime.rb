@@ -56,8 +56,9 @@ Storytime.configure do |config|
   config.enable_file_upload = true
 
   if Rails.env.production?
-    config.s3_bucket = 'my-s3-bucket'
-    config.media_storage = :s3
+    # config.s3_bucket = 'my-s3-bucket'
+    # config.media_storage = :s3
+    config.media_storage = :file
   else
     config.media_storage = :file
   end
