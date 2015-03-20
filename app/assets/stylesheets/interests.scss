@@ -1,0 +1,23 @@
+// Place all the styles related to the Interests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.interest{
+  &.media{
+    a{
+      display: block;
+      width: 250px;
+    }
+  }
+  a{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  #map{
+    display: block;
+    position: auto !important;
+    height: 250px;
+  }
+}

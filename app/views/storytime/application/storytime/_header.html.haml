@@ -13,8 +13,8 @@
           %ul.nav.navbar-nav
             - Storytime::Page.published.each do |page|
               - next if page.id == current_site.root_post_id
-              %li= link_to page.title, storytime.url_for(controller: "pages", action: "show", id: page.slug)
-            %li= link_to "Agenda", storytime.url_for(controller: "posts", action: "index", post_type: "events")
+              %li= link_to page.title, "/pages/#{page.slug}"
+            %li= link_to "Agenda", "/events"
             %li= link_to "Blog", storytime.url_for(Storytime::BlogPost.type_name.pluralize)
           %ul.nav.navbar-nav.navbar-right
             %li

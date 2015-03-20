@@ -82,7 +82,7 @@ Storytime::PostsController.class_eval do
     @posts = @posts.published.order(published_at: :desc).page(params[:page])
 
     if params[:post_type] == "events"
-      render "events/index" and return
+      render "/events/index" and return
     else
       respond_to do |format|
         format.atom

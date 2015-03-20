@@ -1,0 +1,13 @@
+.media.thumbnail.interest
+  - if interest.has_pictures?
+    .media-left
+      = link_to interest do
+        = image_tag(interest.pictures.first.url, class: "media-object")
+  .media-body
+    %h4.media-heading
+      = link_to interest do
+        = interest.name
+    %p= interest.description
+    = render interest.category
+
+= interest.inspect

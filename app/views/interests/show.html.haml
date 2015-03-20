@@ -1,0 +1,41 @@
+.container
+  .row.interest
+    .col-md-12
+      %h2
+        = @interest.name
+        %small
+          = render @interest.category
+    .col-md-6
+      = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{@interest.name}" }])
+      = render @interest.medium
+    .col-md-6
+      = @interest.description
+      %h4 Adresse
+      %address
+        = @interest.address
+        %br
+        = @interest.zip
+        = @interest.city.city
+      %h4 Coordonnées
+      %dl.dl-horizontal
+        %dt
+          %i.fa.fa-mobile
+        %dd
+          = @interest.mobile
+        %dt
+          %i.fa.fa-phone
+        %dd
+          = @interest.phone
+        %dt
+          %i.fa.fa-envelope-o
+        %dd
+          = @interest.email
+        %dt
+          %i.fa.fa-location-arrow
+        %dd
+          = @interest.coordinates
+        %dt
+          %i.fa.fa-globe
+        %dd
+          = @interest.website
+
