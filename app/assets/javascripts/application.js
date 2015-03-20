@@ -15,4 +15,5 @@
 //= require bootstrap-datetimepicker
 //= require locales/bootstrap-datetimepicker.fr
 //= require leaflet
-
+//= require fullcalendar
+//= require agenda
