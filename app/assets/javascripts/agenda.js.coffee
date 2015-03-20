@@ -1,6 +1,7 @@
 $(document).ready ->
   if $("#agenda").length
     $('#agenda').fullCalendar
+      lang: 'fr'
       header:
         left: 'prev,next today'
         center: 'title'
