@@ -34,9 +34,7 @@
       update:
         success: "Abonement mis à jour avec succès."
       destroy:
-        success: >
-		  Vous avez bien quitté cette liste.
-		  Merci de nous avoir suivit.
+        success: "Vous avez bien quitté cette liste. Merci de nous avoir suivit."
         fail: "Erreur lors de votre désincription."
     users:
       create:
