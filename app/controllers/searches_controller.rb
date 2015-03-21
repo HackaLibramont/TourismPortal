@@ -1,8 +1,17 @@
 class SearchesController < Storytime::ApplicationController
+  include InterestsFinder
+  before_filter :get_interests, only: :create
+  before_filter :get_coordinates, only: :create
+  before_filter :define_title, only: :create
+
+
   def create
-    term        = params[:searches][:term]
-    @title      = "Résultat de recherche : #{term}"
-    @interests  = Interest.joins(:city).search_for(term)
     render "interests/index"
+  end
+
+  private
+
+  def define_title
+    @title      = "Résultat de recherche : #{params[:searches][:term]}"
   end
 end

@@ -1,7 +1,8 @@
 class InterestsController < Storytime::ApplicationController
   include InterestsFinder
-  before_filter :get_interests, only: [:index, :map]
-  before_filter :define_title, only: :index
+  before_filter :get_interests, only: [:index, :map, :liked]
+  before_filter :get_coordinates, only: [:index, :map, :liked]
+  before_filter :define_title, only: [:index, :liked]
   def index
   end
 
@@ -10,13 +11,11 @@ class InterestsController < Storytime::ApplicationController
   end
 
   def map
-    @coordinates = Geocoder::Calculations.geographic_center(@interests.map(&:coordinates))
+
   end
 
   def liked
-    @interests = current_user.likeables(Interest)
-    @coordinates = Geocoder::Calculations.geographic_center(@interests.map(&:coordinates))
-    @title = "Mon carnet de voyage"
+
   end
 
   private
@@ -24,5 +23,6 @@ class InterestsController < Storytime::ApplicationController
   def define_title
     @title = "Points d'intérêt"
     @title = category.label if category
+    @title = "Mon carnet de voyage" if action_name == "liked"
   end
 end
