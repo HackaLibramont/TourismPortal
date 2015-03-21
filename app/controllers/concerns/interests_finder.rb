@@ -20,7 +20,7 @@ module InterestsFinder
   end
 
   def search_term
-    @search_term ||= params[:searches][:term]
+    @search_term ||= params[:searches] ? params[:searches][:term] : nil
   end
 
 end

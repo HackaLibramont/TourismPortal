@@ -29,24 +29,29 @@
       %dl.dl-horizontal
         %dt
           %i.fa.fa-mobile
-        %dd
-          = @interest.mobile
-        %dt
-          %i.fa.fa-phone
-        %dd
-          = @interest.phone
-        %dt
-          %i.fa.fa-envelope-o
-        %dd
-          = @interest.email
-        %dt
-          %i.fa.fa-location-arrow
-        %dd
-          = @interest.coordinates
-        %dt
-          %i.fa.fa-globe
-        %dd
-          = @interest.website
+        - if @interest.mobile
+          %dd
+            = @interest.mobile
+          %dt
+            %i.fa.fa-phone
+        - if @interest.phone
+          %dd
+            = @interest.phone
+          %dt
+            %i.fa.fa-envelope-o
+        - if @interest.email
+          %dd
+            = @interest.email
+          %dt
+            %i.fa.fa-location-arrow
+        - if @interest.coordinates
+          %dd
+            = @interest.coordinates
+          %dt
+            %i.fa.fa-globe
+        - if @interest.website
+          %dd
+            = @interest.website
 
-    .col-md-12
+      .col-md-12
       = render @interest.medium
