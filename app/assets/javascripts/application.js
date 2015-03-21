@@ -17,3 +17,4 @@
 //= require leaflet
 //= require fullcalendar
 //= require agenda
+//= require social-likes

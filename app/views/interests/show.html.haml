@@ -11,6 +11,11 @@
       %hr
       %p.lead
         = @interest.description
+      %hr
+      .mb20.social-likes{"data-title" => @interest.name, "data-url" => interest_url(@interest)}
+        .facebook{:title => "Share link on Facebook"} Facebook
+        .twitter{:title => "Share link on Twitter"} Twitter
+        .plusone{:title => "Share link on Google+"} Google+
     .col-md-6
       = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{j(@interest.name)}" }])
     .col-md-6
