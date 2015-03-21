@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     resources :posts, only: :index
     resources :pages, only: :index
   end
-  resources :interests, only: [:index, :show]
+  resources :interests, only: [:index, :show] do
+    collection do
+      match "map", to: "interests#map", via: :get
+    end
+  end
   resources :categories, only: :index do
     resources :interests, only: :index
   end

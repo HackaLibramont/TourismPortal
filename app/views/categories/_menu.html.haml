@@ -14,3 +14,7 @@
               = link_to "Toutes les sous-catégories", category_interests_path(category)
       - else
         = link_to category.label, category_interests_path(category)
+  %li.divider
+  %li
+    = link_to map_interests_path do
+      Carte
