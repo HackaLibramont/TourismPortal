@@ -1,0 +1,16 @@
+%ul.dropdown-menu{:role => "menu"}
+  - categories.each do |category|
+    %li
+      - if category.has_children?
+        %li.dropdown-submenu
+          %a{:href => "#", :tabindex => "-1"}
+            = category.label
+          %ul.dropdown-menu
+            - category.children.each do |category|
+              %li
+                = link_to category.label, category_interests_path(category)
+            %li.divider
+            %li
+              = link_to "Toutes les sous-catégories", category_interests_path(category)
+      - else
+        = link_to category.label, category_interests_path(category)

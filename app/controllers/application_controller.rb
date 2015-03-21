@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
 
   def categories
-    @categories ||= Category.all
+    @categories ||= Category.root
   end
 end

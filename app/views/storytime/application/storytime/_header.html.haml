@@ -21,10 +21,7 @@
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                 Points d'intérêt
                 %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                - categories.each do |category|
-                  %li
-                    = link_to category.label, category_interests_path(category)
+              = render partial: "categories/menu", locals: { categories: categories }
           %ul.nav.navbar-nav.navbar-right
             %li
               = link_to "#{t 'layout.subscribe_to', site_name: @site.title}", "#", data: {target: "#addSubscriptionModal", toggle: "modal"}
