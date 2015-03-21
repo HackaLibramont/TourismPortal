@@ -19,7 +19,7 @@ gem 'socialization', '~> 1.1.0'
 gem 'scoped_search', '~> 3.2.0'
 gem 'yahoo_weatherman', '~> 2.0.0'
 gem 'phony_rails', '~> 0.11.0'
-gem 'oj'
+gem 'yajl-ruby'
 
 
 group :development, :test do
