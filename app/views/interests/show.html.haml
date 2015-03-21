@@ -31,12 +31,12 @@
           %i.fa.fa-mobile
         - if @interest.mobile
           %dd
-            = @interest.mobile
+            = @interest.mobile.phony_formatted(:format => :BE)
           %dt
             %i.fa.fa-phone
         - if @interest.phone
           %dd
-            = @interest.phone
+            = @interest.phone.phony_formatted(:format => :BE)
           %dt
             %i.fa.fa-envelope-o
         - if @interest.email
