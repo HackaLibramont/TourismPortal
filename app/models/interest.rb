@@ -5,6 +5,8 @@ class Interest < ActiveRecord::Base
   belongs_to :category
   belongs_to :city, foreign_key: :zip
 
+  acts_as_likeable
+
   def has_pictures?
     self.pictures.any?
   end

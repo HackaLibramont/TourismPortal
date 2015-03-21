@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-md-12
+      %h2= @title
+      - if @interests.any?
+        = render @interests
+      - else
+        .alert.alert-info
+          Votre carnet de voyage est vide.

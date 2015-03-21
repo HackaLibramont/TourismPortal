@@ -1,0 +1,13 @@
+- if current_user
+  - if current_user.likes?(interest)
+    = link_to dislike_interest_path(interest), method: :delete, class: "btn btn-danger" do
+      %i.fa.fa-star
+      Retirer de mon carnet
+  - else
+    = link_to like_interest_path(interest), method: :post, class: "btn btn-default" do
+      %i.fa.fa-star
+      Ajouter à mon carnet
+- else
+  = link_to like_interest_path(interest), method: :post, class: "btn btn-default" do
+    %i.fa.fa-star
+    Ajouter à mon carnet

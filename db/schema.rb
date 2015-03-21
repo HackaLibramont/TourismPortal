@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320212416) do
+ActiveRecord::Schema.define(version: 20150321004815) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "label",       limit: 255
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150320212416) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "cities", force: :cascade do |t|
+  create_table "cities", id: false, force: :cascade do |t|
     t.integer  "zip",        limit: 4
     t.string   "city",       limit: 255
     t.float    "latitude",   limit: 24
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 20150320212416) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "follows", force: :cascade do |t|
+    t.string   "follower_type",   limit: 255
+    t.integer  "follower_id",     limit: 4
+    t.string   "followable_type", limit: 255
+    t.integer  "followable_id",   limit: 4
+    t.datetime "created_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -77,6 +88,17 @@ ActiveRecord::Schema.define(version: 20150320212416) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.string   "liker_type",    limit: 255
+    t.integer  "liker_id",      limit: 4
+    t.string   "likeable_type", limit: 255
+    t.integer  "likeable_id",   limit: 4
+    t.datetime "created_at"
+  end
+
+  add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables", using: :btree
+  add_index "likes", ["liker_id", "liker_type"], name: "fk_likes", using: :btree
+
   create_table "media", force: :cascade do |t|
     t.integer  "interest_id", limit: 4
     t.string   "type",        limit: 255
@@ -84,6 +106,17 @@ ActiveRecord::Schema.define(version: 20150320212416) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  create_table "mentions", force: :cascade do |t|
+    t.string   "mentioner_type",   limit: 255
+    t.integer  "mentioner_id",     limit: 4
+    t.string   "mentionable_type", limit: 255
+    t.integer  "mentionable_id",   limit: 4
+    t.datetime "created_at"
+  end
+
+  add_index "mentions", ["mentionable_id", "mentionable_type"], name: "fk_mentionables", using: :btree
+  add_index "mentions", ["mentioner_id", "mentioner_type"], name: "fk_mentions", using: :btree
 
   create_table "storytime_actions", force: :cascade do |t|
     t.string   "name",       limit: 255

@@ -15,6 +15,7 @@ gem 'geocoder', '~> 1.2.7'
 gem 'draper', '~> 1.3'
 gem 'leaflet-rails'
 gem 'fullcalendar-rails', '~> 2.3.1.0'
+gem 'socialization', '~> 1.1.0'
 
 group :development, :test do
   gem 'byebug'

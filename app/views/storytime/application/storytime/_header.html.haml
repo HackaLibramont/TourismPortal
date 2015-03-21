@@ -22,6 +22,7 @@
                 Points d'intérêt
                 %span.caret
               = render partial: "categories/menu", locals: { categories: categories }
+            %li= link_to "Carnet de voyage", liked_interests_path
           %ul.nav.navbar-nav.navbar-right
             %li
               = link_to "#{t 'layout.subscribe_to', site_name: @site.title}", "#", data: {target: "#addSubscriptionModal", toggle: "modal"}
