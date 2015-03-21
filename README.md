@@ -103,6 +103,8 @@ http://tourism-portal.be/api/
 ### interests
 *GET interests.json* : a list of interests
 
+*GET interests/liked.json* : a list of favorited interests for current_user
+
 *GET categories/:category_id/interests.json* : a list of interests matching a given :category_id
 
 ```json
@@ -155,7 +157,12 @@ http://tourism-portal.be/api/
   }
   ]
 ```
+### TODO:
 
+- User login
+- User signup
+- User can add an interests to favorites
+- User remove add an interests to favorites
 
 Credits
 -------
