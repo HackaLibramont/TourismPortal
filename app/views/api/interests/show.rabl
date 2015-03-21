@@ -4,7 +4,7 @@ child(:category) do
   attribute :id, :label
 end
 child(:city) do
-  attribute :zip, :city, :coordinates
+  attribute :zip, :city, :latitude, :longitude
 end
 child(:criteria) do
   attribute :id, :label
