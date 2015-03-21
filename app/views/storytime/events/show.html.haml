@@ -16,5 +16,5 @@
       = @post.content.html_safe
       %p= render 'tags', post: @post
     - if @post.coordinates.any?
-      .col-md-6
+      .col-md-6.mt30
         = map(:center => { :latlng => @post.coordinates, :zoom => 12 }, :markers => [{ :latlng => @post.coordinates, :popup => "#{j(@post.title)} - #{j(@post.excerpt)}" }])
