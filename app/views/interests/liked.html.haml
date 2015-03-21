@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-12
-      %h2= @title
+      = page_title(@title)
       - if @interests.any?
         = render @interests
       - else

@@ -1,5 +1,6 @@
 .blog-post{:id => "blog_post_#{blog_post.id}"}
-  %h2= link_to blog_post.title, blog_post
+  .page-header
+    %h2.page-title= link_to blog_post.title, blog_post
   %p.muted= blog_post.created_at.strftime("%b %d, %Y")
   %p= blog_post.excerpt
   %p= link_to "Continue reading →", blog_post

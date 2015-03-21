@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  match "agenda", to: "agenda#index", via: :get
   namespace :api do
     resources :events, only: :index
     resources :posts, only: :index

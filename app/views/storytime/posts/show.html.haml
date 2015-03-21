@@ -1,12 +1,5 @@
-.container
-  - if params[:preview]
-    .alert.alert-info{:role => "alert"}
-      Currently viewing a preview of "#{@post.title}".
-  .row
-    .col-md-12
-      %h2= @post.title
-  .row
-    .col-md-12
-      = @post.content.html_safe
-      %p= render 'tags', post: @post
+%article.col-sm-8.col-sm-offset-2.maincontent
+  %header.page-header
+    %h1.page-title= @post.title
+  = @post.content.html_safe
   = render_comments if @post.show_comments? && !@post.preview

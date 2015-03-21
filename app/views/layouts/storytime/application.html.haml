@@ -11,10 +11,61 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     = yield :head
-  %body{:class => "#{params[:controller].split('/').join(' ')} #{params[:action]} #{params[:controller].parameterize}-controller #{params[:action]}-action", "data-action" => params[:action].camelize, "data-controller" => params[:controller].camelize}
-    = render "storytime/application/storytime/navigation"
-    = render "storytime/application/storytime/flash"
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "Sergey Pozhilov (GetTemplate.com)", :name => "author"}/
+    %title Progressus - Free business bootstrap template by GetTemplate
+    %link{:href => "assets/images/gt_favicon.png", :rel => "shortcut icon"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :media => "screen", :rel => "stylesheet"}/
+    %link{:href => "assets/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "assets/css/font-awesome.min.css", :rel => "stylesheet"}/
+    / Custom styles for our template
+    %link{:href => "assets/css/bootstrap-theme.css", :media => "screen", :rel => "stylesheet"}/
+    %link{:href => "assets/css/main.css", :rel => "stylesheet"}/
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+  %body.home
+    / %body{:class => "#{params[:controller].split('/').join(' ')} #{params[:action]} #{params[:controller].parameterize}-controller #{params[:action]}-action", "data-action" => params[:action].camelize, "data-controller" => params[:controller].camelize}
+    / = render "storytime/application/storytime/navigation"
+    / = render "storytime/application/storytime/flash"
     = render "storytime/application/storytime/header"
+
+
+    / Header
+    - if @page && @page.id == current_site.root_post_id
+      %header#head
+        .container
+          .row
+            %h1.lead AWESOME, CUSTOMIZABLE, FREE
+            %p.tagline
+              PROGRESSUS: free business bootstrap template by
+              %a{:href => "http://www.gettemplate.com/?utm_source=progressus&utm_medium=template&utm_campaign=progressus"} GetTemplate
+            %p
+              %a.btn.btn-default.btn-lg{:href => "http://www.gettemplate.com/", :role => "button"} MORE INFO
+              %a.btn.btn-download.btn-action.btn-lg{:href => "http://www.gettemplate.com/downloads/progressus.zip", :role => "button"} DOWNLOAD NOW
+    - else
+      %header.secondary.mb100
+    / /Header
+    / Intro
+
+
     = yield
+    / Social links. @TODO: replace by link/instructions in template
+    %section#social
+      .container
+        .wrapper.clearfix
+          / AddThis Button BEGIN
+          .addthis_toolbox.addthis_default_style
+            %a.addthis_button_facebook_like{"fb:like:layout" => "button_count"}
+            %a.addthis_button_tweet
+            %a.addthis_button_linkedin_counter
+            %a.addthis_button_google_plusone{"g:plusone:size" => "medium"}
+          / AddThis Button END
     = render "storytime/application/storytime/footer"
     = render "storytime/sites/google_analytics_code"

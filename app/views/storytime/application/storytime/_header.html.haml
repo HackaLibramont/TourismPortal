@@ -1,31 +1,29 @@
-%body
-  %header
-    .navbar.navbar-default.navbar-static-top{:role => "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to @site.title, "/", class: "navbar-brand"
-        .navbar-collapse.collapse
-          %ul.nav.navbar-nav
-            - Storytime::Page.published.each do |page|
-              - next if page.id == current_site.root_post_id
-              %li= link_to page.title, "/pages/#{page.slug}"
-            %li= link_to "Agenda", "/events"
-            %li= link_to "Blog", storytime.url_for(Storytime::BlogPost.type_name.pluralize)
+.navbar.navbar-inverse.navbar-fixed-top.headroom
+  .container
+    .navbar-header
+      / Button for smallest screens
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "index.html"}
+        %img{:alt => "Progressus HTML5 template", :src => "assets/images/logo.png"}/
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav.pull-right
+        - Storytime::Page.published.each do |page|
+          - next if page.id == current_site.root_post_id
+          %li= link_to page.title, "/pages/#{page.slug}"
+        %li= link_to "Agenda", "/events"
+        %li= link_to "Blog", "/#{storytime.url_for(Storytime::BlogPost.type_name.pluralize)}"
 
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Points d'intérêt
-                %span.caret
-              = render partial: "categories/menu", locals: { categories: categories }
-            %li= link_to "Carnet de voyage", liked_interests_path
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to "#{t 'layout.subscribe_to', site_name: @site.title}", "#", data: {target: "#addSubscriptionModal", toggle: "modal"}
-            - unless user_signed_in?
-              %li= link_to "Sign In", Storytime.login_path
-  = render partial: "storytime/subscriptions/modal"
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Points d'intérêt
+            %span.caret
+          = render partial: "categories/menu", locals: { categories: categories }
+        %li= link_to "Carnet de voyage", liked_interests_path
+        %li
+          = link_to "#{t 'layout.subscribe_to', site_name: @site.title}", "#", class: 'btn', data: {target: "#addSubscriptionModal", toggle: "modal"}
+        - unless user_signed_in?
+          %li= link_to "Sign In", Storytime.login_path
+= render partial: "storytime/subscriptions/modal"

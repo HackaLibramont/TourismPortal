@@ -3,10 +3,9 @@
     .col-md-12
       .row
         .col-md-6
-          %h2
-            = @interest.name
-            %small
-              = render @interest.category
+          = page_title(@interest.name)
+          %small
+            = render @interest.category
         .col-md-6.h2-buttons
           .pull-right
             = render partial: "like", locals: { interest: @interest }
