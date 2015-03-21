@@ -1,7 +1,4 @@
-.container
-  - if params[:preview]
-    .alert.alert-info{:role => "alert"}
-      Currently viewing a preview of "#{@post.title}".
-  .row
-    .col-md-12
-      = @post.content.html_safe
+- if @page && @page.id == current_site.root_post_id
+  = render partial: "storytime/pages/content", locals: { page: @page }
+- elsif @post
+  = render partial: "storytime/pages/content", locals: { page: @post }

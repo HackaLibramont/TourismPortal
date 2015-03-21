@@ -10,11 +10,12 @@ class InterestsController < Storytime::ApplicationController
   end
 
   def map
-    @coordinates = Geocoder.search("Arlon").first.coordinates
+    @coordinates = Geocoder::Calculations.geographic_center(@interests.map(&:coordinates))
   end
 
   def liked
     @interests = current_user.likeables(Interest)
+    @coordinates = Geocoder::Calculations.geographic_center(@interests.map(&:coordinates))
     @title = "Mon carnet de voyage"
   end
 

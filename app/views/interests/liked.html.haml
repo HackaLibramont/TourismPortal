@@ -3,6 +3,7 @@
     .col-md-12
       = page_title(@title)
       - if @interests.any?
+        = map(:center => { :latlng => @coordinates, :zoom => 12 }, :markers => @interests.map{|interest| { :latlng => interest.coordinates, :popup => "#{link_to interest.name, interest}" } })
         = render @interests
       - else
         .alert.alert-info

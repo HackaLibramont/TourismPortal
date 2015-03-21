@@ -1,15 +1,13 @@
 .container
   .row.interest
     .col-md-12
-      .row
+      .row.mt20
         .col-md-6
-          = page_title(@interest.name)
-          %small
-            = render @interest.category
-        .col-md-6.h2-buttons
-          .pull-right
-            = render partial: "like", locals: { interest: @interest }
-        .clearfix
+          %h2
+            = @interest.name
+        .col-md-3.pull-right.pt20
+          = render partial: "like", locals: { interest: @interest }
+      .clearfix
       %hr
       %p.lead
         = @interest.description
