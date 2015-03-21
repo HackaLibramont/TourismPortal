@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :posts, only: :index
     resources :pages, only: :index
     resources :interests, only: :index
+    resources :categories, only: :index do
+      resources :interests, only: :index
+    end
   end
   resources :interests, only: [:index, :show] do
     collection do

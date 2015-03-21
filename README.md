@@ -84,6 +84,7 @@ http://tourism-portal.be/api/
 
 ### interests
 *GET interests.json* : a list of events
+*GET categories/:category_id/interests.json* : a list of events matching a given :category_id
 
 ```json
   [
