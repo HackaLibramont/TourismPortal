@@ -17,4 +17,4 @@
       %p= render 'tags', post: @post
     - if @post.coordinates.any?
       .col-md-6
-        = map(:center => { :latlng => @post.coordinates, :zoom => 12 }, :markers => [{ :latlng => @post.coordinates, :popup => "#{@post.title} - #{@post.excerpt}" }])
+        = map(:center => { :latlng => @post.coordinates, :zoom => 12 }, :markers => [{ :latlng => @post.coordinates, :popup => "#{j(@post.title)} - #{j(@post.excerpt)}" }])

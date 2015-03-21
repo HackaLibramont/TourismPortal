@@ -12,7 +12,7 @@
       %p.lead
         = @interest.description
     .col-md-6
-      = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{@interest.name}" }])
+      = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{j(@interest.name)}" }])
     .col-md-6
       %h4 Adresse
       %address
