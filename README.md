@@ -57,8 +57,8 @@ http://tourism-portal.be/api/
 *GET events.json* : a list of events
 
 ```json
-{
-  events: [
+
+  [
     {
       event: {
       id: 4,
@@ -79,7 +79,61 @@ http://tourism-portal.be/api/
     },
     {}
   ]
-}
+
+```
+
+### interests
+*GET interests.json* : a list of events
+
+```json
+  [
+    {
+      id: 1,
+      name: "chez Nous  ",
+      description: "chez Nous on se fout pas de vous. ",
+      address: "rue des déportés 17",
+      zip: 6700,
+      mobile: "0498685687",
+      phone: "063223363",
+      email: "cedric@studio-sept.be",
+      website: "http://www.studio-sept.be",
+      coordinates: [
+        5.34,
+        55.22
+      ],
+      category: {
+        id: 1,
+        label: "Hébergement"
+      },
+      city: {
+        zip: 6700,
+        city: "Arlon",
+        coordinates: [
+          5.5,
+          55.5
+        ]
+      },
+      criteria: [
+        {
+          id: 1,
+          label: "On parle chinois"
+        }
+      ],
+      pictures: [
+        {
+          url: "http://pivotmedia.tourismewallonie.be/pivot/ANX-09-000JYS/ANX-09-000JYS.JPG"
+        }
+      ],
+      videos: [
+        {
+          url: "http://foo.com/video.mp3"
+        }
+      ]
+    },
+  {
+    ...
+  }
+  ]
 ```
 
 

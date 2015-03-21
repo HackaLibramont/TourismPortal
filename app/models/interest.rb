@@ -2,6 +2,7 @@ class Interest < ActiveRecord::Base
   has_many :medium
   has_many :pictures
   has_many :videos
+  has_many :criteria
   belongs_to :category
   belongs_to :city, foreign_key: :zip
 

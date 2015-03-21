@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :events, only: :index
     resources :posts, only: :index
     resources :pages, only: :index
+    resources :interests, only: :index
   end
   resources :interests, only: [:index, :show] do
     collection do
