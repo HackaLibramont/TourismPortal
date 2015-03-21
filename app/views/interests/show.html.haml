@@ -10,7 +10,7 @@
       .clearfix
       %hr
       %p.lead
-        = @interest.description
+        = @interest.description.html_safe
       %hr
       .mb20.social-likes{"data-title" => @interest.name, "data-url" => interest_url(@interest)}
         .facebook{:title => "Share link on Facebook"} Facebook

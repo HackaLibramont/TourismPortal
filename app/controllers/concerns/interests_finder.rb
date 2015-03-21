@@ -9,9 +9,9 @@ module InterestsFinder
 
   def get_interests
     @interests = Interest.all
-    @interests = @interests.where(category_id: category.id) if category
-    @interests = current_user.likeables(Interest)           if action_name == "liked"
-    @interests = Interest.joins(:city).search_for(term)     if search_term
+    @interests = @interests.where(category_id: category.id)    if category
+    @interests = current_user.likeables(Interest)              if action_name == "liked"
+    @interests = Interest.joins(:city).search_for(search_term) if search_term
     @interests
   end
 
@@ -20,7 +20,7 @@ module InterestsFinder
   end
 
   def search_term
-    @search_term ||= params[:search_term]
+    @search_term ||= params[:searches][:term]
   end
 
 end

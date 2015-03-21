@@ -9,3 +9,11 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
+
+Category.create!(id: 1, label: "Hébergement")
+Category.create!(id: 2, label: "Terroir / Gastronomie")
+Category.create!(id: 3, label: "Loisir / Attraction")
+Category.create!(id: 4, label: "Culture")
+Category.create!(id: 5, label: "Balade / Randonnées")
+Category.create!(id: 6, label: "Divertissement")
+Category.create!(id: 7, label: "Evénement")

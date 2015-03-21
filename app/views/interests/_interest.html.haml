@@ -7,5 +7,5 @@
     %h4.media-heading
       = link_to interest do
         = interest.name
-    %p= interest.description
+    %p= interest.description.html_safe
     = render interest.category
