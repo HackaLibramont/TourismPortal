@@ -82,6 +82,24 @@ http://tourism-portal.be/api/
 
 ```
 
+### categories
+*GET categories.json* : a list of events
+
+```json
+[
+  {
+    id: 1,
+    label: "Hébergement",
+    children: [
+      {
+        id: 2,
+        label: "Gîtes"
+      }
+    ]
+  }
+]
+```
+
 ### interests
 *GET interests.json* : a list of events
 *GET categories/:category_id/interests.json* : a list of events matching a given :category_id
