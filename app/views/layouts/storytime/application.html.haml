@@ -37,9 +37,7 @@
               %a.btn.btn-download.btn-action.btn-lg{:href => "http://www.gettemplate.com/downloads/progressus.zip", :role => "button"} DOWNLOAD NOW
     - else
       %header.secondary.mb100
-    / /Header
-    / Intro
-
+    = render "shared/search"
 
     = yield
     / Social links. @TODO: replace by link/instructions in template

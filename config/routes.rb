@@ -23,10 +23,10 @@ Rails.application.routes.draw do
       match "like", to: "likeable#create", via: :post
       match "dislike", to: "likeable#destroy", via: :delete
     end
-
   end
   resources :categories, only: :index do
     resources :interests, only: :index
   end
+  resource :search, only: :create
   mount Storytime::Engine => "/"
 end

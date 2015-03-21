@@ -6,6 +6,11 @@ class Interest < ActiveRecord::Base
   belongs_to :category
   belongs_to :city, foreign_key: :zip
 
+
+  scoped_search on: [:name, :description, :address, :website]
+  scoped_search in: :city, on: [:city]
+  scoped_search in: :category, on: [:label]
+
   acts_as_likeable
 
   def has_pictures?
@@ -14,5 +19,9 @@ class Interest < ActiveRecord::Base
 
   def coordinates
     [latitude, longitude]
+  end
+
+  def city_name
+    city.name
   end
 end

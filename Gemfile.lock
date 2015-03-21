@@ -316,6 +316,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    scoped_search (3.2.0)
+      activerecord (>= 3.2.0)
     sexp_processor (4.5.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
@@ -417,6 +419,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails_layout
   sass-rails (~> 5.0)
+  scoped_search (~> 3.2.0)
   simple_form
   socialization (~> 1.1.0)
   spring

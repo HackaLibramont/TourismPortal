@@ -16,6 +16,7 @@ gem 'draper', '~> 1.3'
 gem 'leaflet-rails'
 gem 'fullcalendar-rails', '~> 2.3.1.0'
 gem 'socialization', '~> 1.1.0'
+gem 'scoped_search', '~> 3.2.0'
 
 group :development, :test do
   gem 'byebug'
