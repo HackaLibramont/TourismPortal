@@ -9,7 +9,7 @@ stderr_path       "#{app_path}/log/unicorn.log"
 stdout_path       "#{app_path}/log/unicorn.log"
 
 listen "/tmp/unicorn_tourism-portal.sock"
-worker_processes 4
+worker_processes 1
 timeout 180
 
 preload_app true
