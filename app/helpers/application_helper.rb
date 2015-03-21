@@ -9,22 +9,23 @@ module ApplicationHelper
   def icon_url_for(category_label)
     # category_label.downcase!
     case category_label.parameterize
-    when "hébergement"
-      "/assets/fontawesome/building8.png"
+    when "hebergement"
+      url = "fontawesome/building8.png"
     when "terroir-gastronomie"
-      "/assets/fontawesome/fork9.png"
+      url = "fontawesome/fork9.png"
     when "loisir-attraction"
-      "/assets/fontawesome/dribbble4.png"
+      url = "fontawesome/dribbble4.png"
     when "culture"
-      "/assets/fontawesome/book95.png"
+      url = "fontawesome/book95.png"
     when "balade-randonnee"
-      "/assets/fontawesome/plant16.png"
+      url = "fontawesome/plant16.png"
     when "divertissement"
-      "/assets/fontawesome/film28.png"
+      url = "fontawesome/film28.png"
     when "evenement"
-      "/assets/fontawesome/calendar52.png"
+      url = "fontawesome/calendar52.png"
     when "transport"
-      "/assets/fontawesome/road16.png"
+      url = "fontawesome/road16.png"
     end
+    image_path(url)
   end
 end

@@ -2,4 +2,4 @@
   .row
     .col-md-12
       = page_title("Carte des points d'intérêts")
-      = map(:center => { :latlng => @coordinates, :zoom => 12 }, :markers => @interests.map{|interest| { :latlng => interest.coordinates, :popup => "#{link_to interest.name, interest}" } })
+      = map(:center => { :latlng => @coordinates, :zoom => 12 }, :markers => @interests.map{|interest| { :latlng => interest.coordinates, :popup => "#{link_to interest.name, interest}", icon: { name: "i#{interest.id}", icon_url: icon_url_for(interest.category.label), icon_size: 32 } } })
