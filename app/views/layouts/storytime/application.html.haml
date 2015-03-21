@@ -7,33 +7,19 @@
     %title= t('layout.title')
     = stylesheet_link_tag    "storytime/application", media: "all"
     = stylesheet_link_tag    "application", media: "all"
+    - if request.path.match "admin"
+      = stylesheet_link_tag "backend", media: "all"
+    - else
+      = stylesheet_link_tag "frontend", media: "all"
     = javascript_include_tag "storytime/application"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = yield :head
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "Sergey Pozhilov (GetTemplate.com)", :name => "author"}/
-    %title Progressus - Free business bootstrap template by GetTemplate
-    %link{:href => "assets/images/gt_favicon.png", :rel => "shortcut icon"}/
-    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :media => "screen", :rel => "stylesheet"}/
-    %link{:href => "assets/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/font-awesome.min.css", :rel => "stylesheet"}/
-    / Custom styles for our template
-    %link{:href => "assets/css/bootstrap-theme.css", :media => "screen", :rel => "stylesheet"}/
-    %link{:href => "assets/css/main.css", :rel => "stylesheet"}/
-    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
-    /[if lt IE 9]
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
+
   %body.home
     / %body{:class => "#{params[:controller].split('/').join(' ')} #{params[:action]} #{params[:controller].parameterize}-controller #{params[:action]}-action", "data-action" => params[:action].camelize, "data-controller" => params[:controller].camelize}
     / = render "storytime/application/storytime/navigation"
-    / = render "storytime/application/storytime/flash"
+    = render "storytime/application/storytime/flash"
     = render "storytime/application/storytime/header"
 
 
