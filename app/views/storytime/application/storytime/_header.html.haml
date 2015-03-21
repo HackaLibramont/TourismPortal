@@ -16,6 +16,15 @@
               %li= link_to page.title, "/pages/#{page.slug}"
             %li= link_to "Agenda", "/events"
             %li= link_to "Blog", storytime.url_for(Storytime::BlogPost.type_name.pluralize)
+
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                Points d'intérêt
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                - categories.each do |category|
+                  %li
+                    = link_to category.label, category_interests_path(category)
           %ul.nav.navbar-nav.navbar-right
             %li
               = link_to "#{t 'layout.subscribe_to', site_name: @site.title}", "#", data: {target: "#addSubscriptionModal", toggle: "modal"}

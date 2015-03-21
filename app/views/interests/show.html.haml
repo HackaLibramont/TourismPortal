@@ -5,11 +5,11 @@
         = @interest.name
         %small
           = render @interest.category
+      %p.lead
+        = @interest.description
     .col-md-6
       = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{@interest.name}" }])
-      = render @interest.medium
     .col-md-6
-      = @interest.description
       %h4 Adresse
       %address
         = @interest.address
@@ -39,3 +39,5 @@
         %dd
           = @interest.website
 
+    .col-md-12
+      = render @interest.medium

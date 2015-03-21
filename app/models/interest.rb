@@ -5,10 +5,8 @@ class Interest < ActiveRecord::Base
   belongs_to :category
   belongs_to :city, foreign_key: :zip
 
-  %w(pictures videos).each do |medium_type|
-    define_method "has_#{medium_type}?" do
-      medium_type.send(:length) > 1
-    end
+  def has_pictures?
+    self.pictures.any?
   end
 
   def coordinates
