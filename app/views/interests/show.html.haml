@@ -16,42 +16,45 @@
         .facebook{:title => "Share link on Facebook"} Facebook
         .twitter{:title => "Share link on Twitter"} Twitter
         .plusone{:title => "Share link on Google+"} Google+
-    .col-md-6
-      = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{j(@interest.name)}" }])
-    .col-md-6
-      %h4 Adresse
-      %address
-        = @interest.address
-        %br
-        = @interest.zip
-        = @interest.city.city
-      %h4 Coordonnées
-      %dl.dl-horizontal
-        %dt
-          %i.fa.fa-mobile
-        - if @interest.mobile
-          %dd
-            = @interest.mobile.phony_formatted(:format => :BE)
+    .col-md-12
+      .col-md-6
+        = map(:center => { :latlng => @interest.coordinates, :zoom => 12 }, :markers => [{ :latlng => @interest.coordinates, :popup => "#{j(@interest.name)}" }])
+      .col-md-6
+        %h4 Adresse
+        %address
+          = @interest.address
+          %br
+          = @interest.zip
+          = @interest.city.city
+        %h4 Coordonnées
+        %dl.dl-horizontal
           %dt
-            %i.fa.fa-phone
-        - if @interest.phone
-          %dd
-            = @interest.phone.phony_formatted(:format => :BE)
-          %dt
-            %i.fa.fa-envelope-o
-        - if @interest.email
-          %dd
-            = @interest.email
-          %dt
-            %i.fa.fa-location-arrow
-        - if @interest.coordinates
-          %dd
-            = @interest.coordinates
-          %dt
-            %i.fa.fa-globe
-        - if @interest.website
-          %dd
-            = @interest.website
-
-      .col-md-12
+            %i.fa.fa-mobile
+          - if @interest.mobile
+            %dd
+              = @interest.mobile.phony_formatted(:format => :BE)
+            %dt
+              %i.fa.fa-phone
+          - if @interest.phone
+            %dd
+              = @interest.phone.phony_formatted(:format => :BE)
+            %dt
+              %i.fa.fa-envelope-o
+          - if @interest.email
+            %dd
+              = @interest.email
+            %dt
+              %i.fa.fa-location-arrow
+          - if @interest.coordinates
+            %dd
+              = @interest.coordinates
+            %dt
+              %i.fa.fa-globe
+          - if @interest.website
+            %dd
+              = @interest.website
+    %hr
+    .col-md-12.mt20
+      - if @interest.medium.any?
+        %h4 Photos
       = render @interest.medium
