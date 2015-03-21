@@ -83,7 +83,7 @@ http://tourism-portal.be/api/
 ```
 
 ### categories
-*GET categories.json* : a list of events
+*GET categories.json* : a list of categories
 
 ```json
 [
@@ -101,8 +101,9 @@ http://tourism-portal.be/api/
 ```
 
 ### interests
-*GET interests.json* : a list of events
-*GET categories/:category_id/interests.json* : a list of events matching a given :category_id
+*GET interests.json* : a list of interests
+
+*GET categories/:category_id/interests.json* : a list of interests matching a given :category_id
 
 ```json
   [
