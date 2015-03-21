@@ -1,0 +1,12 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.artMap{
+  display: none;
+}
+
+.artPhoto{
+  max-width: 500px;
+  @extend .img-responsive;
+  @extend .thumbnail;
+}

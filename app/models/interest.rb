@@ -24,4 +24,16 @@ class Interest < ActiveRecord::Base
   def city_name
     city.name
   end
+
+  def excerpt
+    regex = /<(h|H)(1|2|3|4|5|6)>/
+    return "" if description.empty?
+    return description if description.split(regex).empty?
+    excerpt = description.split(regex)
+    if excerpt.is_a? Array
+      excerpt.first
+    else
+      excerpt
+    end
+  end
 end
