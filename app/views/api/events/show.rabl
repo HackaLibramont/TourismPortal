@@ -1,5 +1,5 @@
 object @event
-attributes :id, :title, :excerpt, :content, :street, :zipcode, :city, :coordinates
+attributes :id, :title, :excerpt, :content, :street, :zipcode, :city, :latitude, :longitude
 
 node(:start) do |e|
   e.start_time

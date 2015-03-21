@@ -1,5 +1,5 @@
 object @interest
-attributes :id, :name, :description, :address, :zip, :mobile, :phone, :email, :website, :coordinates
+attributes :id, :name, :description, :address, :zip, :mobile, :phone, :email, :website, :latitude, :longitude
 child(:category) do
   attribute :id, :label
 end
